@@ -12,7 +12,7 @@ def overall_evolution_rate():
             taux = float(input("\nTaux n°" + str(i-1) + " ? "))
             cm = cm*(1+(taux/100))
         taux = cm-1
-        a = sens(taux)
+        a = sense(taux)
         print("\nYour evolution rate is " + a + ".")
         return(round(taux,3))
     except:
