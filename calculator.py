@@ -1,7 +1,8 @@
  
-#**
+#*
 # ! Fonction :
-# ? F1 
+# ? F1 = Calcul a partir des données fournie par l'utilisateur le coéf mutliplicateur, puis le taux d'évolution qu'il return
+# ? Il affiche quel évolution est une hausse, une baisse ou est nulle parmis celle fournis par l'utilisateur
 #*
  
 def taux_et_coefmutlipli(x1, x2, x3):
@@ -11,24 +12,8 @@ def taux_et_coefmutlipli(x1, x2, x3):
         print("Toutes les évolution données sont des baisse.")
     elif x1 == 0 and x2 == 0 and x3 == 0:
         print("Cette demande n'a aucun interêt... J'ai beau avoir été programmer, sachez que c'est blessant de me voir donnée une tache si innutile, alors si vous pouviez la prochaine fois choisir des évolution non nulle se serait respectueux a mon égard, merci.") #text d'aucune utilité
-    elif x1 > 0 :
-        print("La première évolution est une hausse.")
-    elif x2 > 0 :
-        print("La seconde évolution est une hausse.")
-    elif x3 > 0 :
-        print("La troisième évolution est une hausse.")
-    elif x1 < 0 :
-        print("La première évolution est une baisse.")
-    elif x2 < 0 :
-        print("La seconde évolution est une baisse.")
-    elif x3 < 0 :
-        print("La troisième évolution est une baisse.")
-    elif x1 == 0 :
-        print("La première évolution est nulle.")
-    elif x2 == 0 :
-        print("La seconde évolution est nulle.")
     else:
-        print("La troisième évolution est nulle.")
+        print()
     tx1 = 1 + (x1 / 100)
     tx2 = 1 + (x2 / 100)
     tx3 = 1 + (x3 / 100)
@@ -37,7 +22,7 @@ def taux_et_coefmutlipli(x1, x2, x3):
     return (round(t,3))
 
 #*
-# ? F2
+# ? F2 = Calcul le taux réciproque a partir d'un taux donné par l'utilisateur 
 #*
 
 def taux_recipr(t, t2):
@@ -66,7 +51,7 @@ def taux_recipr(t, t2):
         return (round(tr,3))
 
 #*
-# ? F3 
+# ? F3 = Demande des évolutions et utilisation de la F1
 #*
 
 def t():
@@ -79,26 +64,26 @@ def t():
 
 #*
 # ! Don des réponses 
-#*
+#* 
 
-wdhw = input("\nQue souhaitez vous calculez ? Faites votre choix parmis les posibilité ci-dessous :\n\n-coeficien multiplicateur\n-taux reciproque\n-coeficien multiplicateur puis taux reciproque\n-coeficien multiplicateur et taux reciproque \n")
-if wdhw == "coeficien multiplicateur":
+wdhw = input("\nQue souhaitez vous calculez ? Faites votre choix parmis les posibilité ci-dessous :\n\n1) taux multiplicateur\n2) taux reciproque\n3) taux multiplicateur puis taux reciproque\n4) taux multiplicateur et taux reciproque\n")
+if wdhw == "1":
     ter = t() 
-elif wdhw == "taux reciproque":
+elif wdhw == "2":
     t1 = float(input("Faites le choix du premier coeficien multiplicateur (en pourcentage) : "))
     t2 = float(input("Faites le choix du second coeficien multiplicateur (en pourcentage) : "))
     tr = taux_recipr(t1, t2)
     print("\nLe taux reciproque est aproximativement à " + str(tr) + ", en pourcentage " + str(tr*100) + "%")
-elif wdhw == "coeficien multiplicateur puis taux reciproque":
+elif wdhw == "3":
     ter = t()
     t2 = float(input("Faites le choix du second coeficien multplicateur (en pourcentage) : "))
     tr = taux_recipr(ter, t2)
     print("\nLe taux reciproque est aproximativement à " + str(tr) + ", en pourcentage " + str(tr*100) + "%")
-elif wdhw == "coeficien multiplicateur et taux reciproque":
+elif wdhw == "4":
     t()
     t1 = float(input("Faites le choix du premier coeficien multplicateur (en pourcentage) : "))
     t2 = float(input("Faites le choix du second coeficien multplicateur (en pourcentage) : "))
     tr = taux_recipr(t1, t2)
     print("\nLe taux reciproque est aproximativement à " + str(tr) + ", en pourcentage " + str(tr*100) + "%")
 else:
-    print("Veuillez verifiez que le nom du calcul est bien en minuscule et sans accents.")
+    print("Veuillez verifiez la saisie du bon numéro attribuer au(x) calcul(s) choisi(s).")
