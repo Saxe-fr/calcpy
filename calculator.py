@@ -1,11 +1,11 @@
- 
+#EN Code
 #** 
 # ! Function
 # ? f1
 # *
 
-def taux_évolution_global():
-    nmbr1 = int(input("Combien voulez vous d'évolutions ? "))
+def overall_evolution_rate():
+    nmbr1 = int(input("How many evolution do you want ? "))
     try:
         cm = 1
         for i in range(2, nmbr1+2):
@@ -13,31 +13,31 @@ def taux_évolution_global():
             cm = cm*(1+(taux/100))
         taux = cm-1
         a = sens(taux)
-        print("\nVotre taux d'évolution est " + a + ".")
+        print("\nYour evolution rate is " + a + ".")
         return(round(taux,3))
     except:
-        print("Vérifier que le nombre saisit est bien contenu entre 2 et 5 et que c'est un nombre entier.")
+        print("Check that the number entered is well contained between 2 and 5 and that it is an integer.")
     
 #** 
 # ? f2
 # *
 
-def sens(x):
+def sense(x):
     if x > 0:
-        return "une hausse"
+        return "a rise"
     elif x < 0:
-        return "une baisse"
+        return "a drop"
     else:
-        return "nulle"
+        return "nul"
 
 #** 
 # ? f3
 # *
 
-def taux():
+def rate():
     try: 
-        t = taux_évolution_global()
-        print("\nLe taux d'évolution est aproximativement égale à " + str(t) + ", et en pourcentage " + str(round(t*100,3)) + "%.\n")
+        t = overall_evolution_rate()
+        print("\nThe rate of evolution is approximately equal to " + str(t) + ", and in percentage " + str(round(t*100,3)) + "%.\n")
     except:
         print()
 
@@ -45,36 +45,36 @@ def taux():
 # ? f4
 # *
 
-def taux_recipr(taux):
+def reciprocal_rate(taux):
     try:
         cmr = 1/(1+(taux/100))
         tr = cmr - 1
         return(round(tr,3))
     except:
-        print("En l’absence de précisions supplémentaires sur l’axiomatique utilisée, selon le second théorème de Gödel, la proposition est indécidable.")
+        print("In the absence of additional details on the axiomatic used, according to Gödel's second theorem, the proposition is undecidable.") #Math joke
 
 #** 
 # ? Choix
 # *
 
-wdyw = input("\nQue souhaitez vous calculer ? Faites votre choix parmis les posibilités ci-dessous :\n\n1) taux d'évolution\n2) taux reciproque\n3) taux d'évolution puis taux reciproque\n4) taux d'évolution et taux reciproque\n\n")
+wdyw = input("\nWhat do you want to calculate? Choose from the options below: \n\n1) evolution rate\n2) reciprocal rate\n3) evolution rate then reciprocal rate\n4) evolution rate and reciprocal rate\n\n")
 try:
     if wdyw == "1":
-        ter = taux() 
+        ter = rate() 
     elif wdyw == "2":
-        t1 = float(input("\nFaites le choix du taux d'évolution (en pourcentage) : "))
-        tr = taux_recipr(t1)
-        print("\nLe taux reciproque est approximativement à " + str(tr) + ", en pourcentage " + str(tr*100) + "%")
+        t1 = float(input("\nChoose the evolution rate (in percentage): "))
+        tr = reciprocal_rate(t1)
+        print("\nThe reciprocal rate is approximately" + str(tr) + ", in percentage " + str(tr*100) + "%")
     elif wdyw == "3":
-        ter = taux()
-        tr = taux_recipr(ter)
-        print("\nLe taux reciproque est approximativement à " + str(tr) + ", en pourcentage " + str(tr*100) + "%")
+        ter = rate()
+        tr = reciprocal_rate(ter)
+        print("\nThe reciprocal rate is approximately" + str(tr) + ", in percentage " + str(tr*100) + "%")
     elif wdyw == "4":
-        ter = taux()
-        t1 = float(input("Faites le choix du taux d'évolution (en pourcentage) : "))
-        tr = taux_recipr(t1)
-        print("\nLe taux reciproque est approximativement égale à " + str(tr) + ", en pourcentage " + str(tr*100) + "%")
+        ter = rate()
+        t1 = float(input("Choose the evolution rate (in percentage): "))
+        tr = reciprocal_rate(t1)
+        print("\nThe reciprocal rate is approximately" + str(tr) + ", in percentage " + str(tr*100) + "%")
     else:
-        print("Veuillez verifier la saisie du bon numéro attribué au(x) calcul(s) choisi(s).")
+        print("Please check that you have entered the correct number assigned to the chosen calculation(s).")
 except:
-    print("Source//, ERROR systeme; code-source try=false")
+    print("Source//, ERROR systeme; code-source try=false") #Juste error if you want
