@@ -1,134 +1,104 @@
  
-#** 
-# ! Function
-# ? f1
-# *
-
-def taux_évolution_global():
-    nmbr1 = int(input("\nCombien voulez vous d'évolution(s) ? \nDe 2 a 5 : "))
-    if nmbr1 == 2:  
-        evo1 = float(input("Quel est la première évolution ? "))
-        evo2 = float(input("Quel est la seconde évolution ? "))
-        tevo1 = 1 + (evo1 / 100)
-        tevo2 = 1 + (evo2 / 100)
-        cm2 = tevo1 * tevo2
-        t2 = cm2 - 1
-        sevo1 = sens(evo1)
-        sevo2 = sens(evo2)
-        print("La première évolution est " + sevo1 + " et la seconde évolution est " + sevo2 + ".")
-        return(round(t2,3))
-    elif nmbr1 == 3:
-        evo1 = float(input("Quel est la première évolution ? "))
-        evo2 = float(input("Quel est la seconde évolution ? "))
-        evo3 = float(input("Quel est la troisième évolution ? "))
-        tevo1 = 1 + (evo1 / 100)
-        tevo2 = 1 + (evo2 / 100)
-        tevo3 = 1 + (evo3 / 100)
-        cm3 = tevo1 * tevo2 * tevo3
-        t3 = cm3 - 1
-        sevo1 = sens(evo1)
-        sevo2 = sens(evo2)
-        sevo3 = sens(evo3)
-        print("La première évolution est " + sevo1 + ", la seconde évolution est " + sevo2 + " et la troisème évolution est " + sevo3 + ".")
-        return(round(t3,3))
-    elif nmbr1 == 4:
-        evo1 = float(input("Quel est la première évolution ? "))
-        evo2 = float(input("Quel est la seconde évolution ? "))
-        evo3 = float(input("Quel est la troisième évolution ? "))
-        evo4 = float(input("Quel est la quatrième évolution ? "))
-        tevo1 = 1 + (evo1 / 100)
-        tevo2 = 1 + (evo2 / 100)
-        tevo3 = 1 + (evo3 / 100)
-        tevo4 = 1 + (evo4 / 100)
-        cm4 = tevo1 * tevo2 * tevo3 * tevo4
-        t4 = cm4 - 1
-        sevo1 = sens(evo1)
-        sevo2 = sens(evo2)
-        sevo3 = sens(evo3)
-        sevo4 = sens(evo4)
-        print("La première évolution est " + sevo1 + ", la seconde évolution est " + sevo2 + ", la troisème évolution est " + sevo3 + " et la quatrième évolution est de " + sevo4 + ".")
-        return(round(t4,3))
-    elif nmbr1 == 5:
-        evo1 = float(input("Quel est la première évolution ? "))
-        evo2 = float(input("Quel est la seconde évolution ? "))
-        evo3 = float(input("Quel est la troisième évolution ? "))
-        evo4 = float(input("Quel est la quatrième évolution ? "))
-        evo5 = float(input("Quel est la cinquième evolution ? "))
-        tevo1 = 1 + (evo1 / 100)
-        tevo2 = 1 + (evo2 / 100)
-        tevo3 = 1 + (evo3 / 100)
-        tevo4 = 1 + (evo4 / 100)
-        tevo5 = 1 + (evo5 / 100)
-        cm5 = tevo1 * tevo2 * tevo3 * tevo4 * tevo5
-        t5 = cm5 - 1
-        sevo1 = sens(evo1)
-        sevo2 = sens(evo2)
-        sevo3 = sens(evo3)
-        sevo4 = sens(evo4)
-        sevo5 = sens(evo5)
-        print("La première évolution est " + sevo1 + ", la seconde évolution est " + sevo2 + ", la troisème évolution est " + sevo3 + ", la quatrième évolution est de " + sevo4 + " et la cinquième évolution est de " + sevo5 + ".")
-        return(round(t5,3))
+#**
+# ! Fonction :
+# ? F1 
+#*
+ 
+def taux_et_coefmutlipli(x1, x2, x3):
+    if x1 > 0 and x2 > 0 and x3 > 0:
+        print("Toutes les évolution données sont des hausse.")
+    elif x1 < 0 and x2 < 0 and x3 < 0:
+        print("Toutes les évolution données sont des baisse.")
+    elif x1 == 0 and x2 == 0 and x3 == 0:
+        print("Cette demande n'a aucun interêt... J'ai beau avoir été programmer, sachez que c'est blessant de me voir donnée une tache si innutile, alors si vous pouviez la prochaine fois choisir des évolution non nulle se serait respectueux a mon égard, merci.") #text d'aucune utilité
+    elif x1 > 0 :
+        print("La première évolution est une hausse.")
+    elif x2 > 0 :
+        print("La seconde évolution est une hausse.")
+    elif x3 > 0 :
+        print("La troisième évolution est une hausse.")
+    elif x1 < 0 :
+        print("La première évolution est une baisse.")
+    elif x2 < 0 :
+        print("La seconde évolution est une baisse.")
+    elif x3 < 0 :
+        print("La troisième évolution est une baisse.")
+    elif x1 == 0 :
+        print("La première évolution est nulle.")
+    elif x2 == 0 :
+        print("La seconde évolution est nulle.")
     else:
-        print("Vérifier que le nombre saisit est bien contenus entre 2 et 5 et que c'est un nombre entier.")
-    
-#** 
-# ? f2
-# *
+        print("La troisième évolution est nulle.")
+    tx1 = 1 + (x1 / 100)
+    tx2 = 1 + (x2 / 100)
+    tx3 = 1 + (x3 / 100)
+    cm = tx1 * tx2 * tx3
+    t = cm - 1
+    return (round(t,3))
 
-def sens(x):
-    if x > 0:
-        return "une hausse"
-    elif x < 0:
-        return "une baisse"
-    else:
-        return "nulle"
+#*
+# ? F2
+#*
 
-#** 
-# ? f3
-# *
-
-def taux():
-    try: 
-        t = taux_évolution_global()
-        print("\nLe taux d'évolution est aproximativement égale à " + str(t) + ", et en pourcentage " + str(t*100) + "%.\n")
-        return(t)
-    except:
-        print()
-
-#** 
-# ? f4
-# *
-
-def taux_recipr(taux):
-    try:
-        cmr = 1/(1+(taux/100))
+def taux_recipr(t, t2):
+    if t > 0:
+        cmr = 1/(1+(t/100))
         tr = cmr - 1
-        return (round(tr,3))
+    else :
+        t = t * -1
+        cmr = 1/(1-(t/100))
+        tr = cmr - 1
+    try:
+        if t2 > 0:
+            cmr2 = 1/(1+(t2/100))
+            tr2 = cmr2 - 1
+        else :
+            t2 = t2 * -1
+            cmr2 = 1/(1-(t2/100))
+            tr2 = cmr2 - 1
     except:
-        print("En l’absence de précisions supplémentaires sur l’axiomatique utilisée, selon le second théorème de Gödel, la proposition est indécidables")
-
-#** 
-# ? Choix
-# *
-
-wdyw = input("\nQue souhaitez vous calculez ? Faites votre choix parmis les posibilité ci-dessous :\n\n1) taux d'évolution\n2) taux reciproque\n3) taux d'évolution puis taux reciproque\n4) taux d'évolution et taux reciproque\n\n")
-try:
-    if wdyw == "1":
-        ter = taux() 
-    elif wdyw == "2":
-        t1 = float(input("Faites le choix du premier coeficien multiplicateur (en pourcentage) : "))
-        tr = taux_recipr(t1)
-        print("\nLe taux reciproque est aproximativement à " + str(tr) + ", en pourcentage " + str(tr*100) + "%")
-    elif wdyw == "3":
-        ter = taux()
-        tr = taux_recipr(ter)
-        print("\nLe taux reciproque est aproximativement à " + str(tr) + ", en pourcentage " + str(tr*100) + "%")
-    elif wdyw == "4":
-        ter = taux()
-        t1 = float(input("Faites le choix du premier coeficien multplicateur (en pourcentage) : "))
-        tr = taux_recipr(t1)
-        print("\nLe taux reciproque est aproximativement à " + str(tr) + ", en pourcentage " + str(tr*100) + "%")
+        tr2 = 0
+    if tr2 == 0:
+        return (tr)
     else:
-        print("Veuillez verifiez la saisie du bon numéro attribuer au(x) calcul(s) choisi(s).")
-except:
-    print()
+        tr3 = tr + tr2
+        tr = tr3
+        return (round(tr,3))
+
+#*
+# ? F3 
+#*
+
+def t():
+    x1 = float(input("\nEntrez la première évolution (en pourcentage) : "))
+    x2 = float(input("\nEntrez la seconde évolution (en pourcentage) : "))
+    x3 = float(input("\nEntrez la troisème évolution (en pourcentage) : "))
+    t = taux_et_coefmutlipli(x1, x2, x3)
+    print("\nLe coeficien multiplicateur est aproximativement égale à " + str(t) + ", et en pourcentage " + str(t*100) + "%")
+    return (round(t,3))
+
+#*
+# ! Don des réponses 
+#*
+
+wdhw = input("\nQue souhaitez vous calculez ? Faites votre choix parmis les posibilité ci-dessous :\n\n-coeficien multiplicateur\n-taux reciproque\n-coeficien multiplicateur puis taux reciproque\n-coeficien multiplicateur et taux reciproque \n")
+if wdhw == "coeficien multiplicateur":
+    ter = t() 
+elif wdhw == "taux reciproque":
+    t1 = float(input("Faites le choix du premier coeficien multiplicateur (en pourcentage) : "))
+    t2 = float(input("Faites le choix du second coeficien multiplicateur (en pourcentage) : "))
+    tr = taux_recipr(t1, t2)
+    print("\nLe taux reciproque est aproximativement à " + str(tr) + ", en pourcentage " + str(tr*100) + "%")
+elif wdhw == "coeficien multiplicateur puis taux reciproque":
+    ter = t()
+    t2 = float(input("Faites le choix du second coeficien multplicateur (en pourcentage) : "))
+    tr = taux_recipr(ter, t2)
+    print("\nLe taux reciproque est aproximativement à " + str(tr) + ", en pourcentage " + str(tr*100) + "%")
+elif wdhw == "coeficien multiplicateur et taux reciproque":
+    t()
+    t1 = float(input("Faites le choix du premier coeficien multplicateur (en pourcentage) : "))
+    t2 = float(input("Faites le choix du second coeficien multplicateur (en pourcentage) : "))
+    tr = taux_recipr(t1, t2)
+    print("\nLe taux reciproque est aproximativement à " + str(tr) + ", en pourcentage " + str(tr*100) + "%")
+else:
+    print("Veuillez verifiez que le nom du calcul est bien en minuscule et sans accents.")
