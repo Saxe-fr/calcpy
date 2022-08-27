@@ -1,3 +1,4 @@
+from math import *
 #EN Code
 #** 
 # ! Function
@@ -53,11 +54,40 @@ def reciprocal_rate(taux):
     except:
         print("In the absence of additional details on the axiomatic used, according to Gödel's second theorem, the proposition is undecidable.") #Math joke
 
+#**
+#? f5
+#*
+
+def standard_deviation():
+    N = int(input("How many variables do you have to process? \nChoose a number greater than two."))
+    #Initialization :
+    n = N    
+    sum = 0
+    ecrtyp = 0
+    vrc = 0 
+    vrct = 0
+    l = []
+    for n in range (n): 
+        x = float(input("Enter the value of variable N°" + str(n+1) + " = "))
+        sum = x + sum
+        l.append(x)
+    mean = sum / N
+    for n in range (n):
+        x = l[n]
+        vrc = (x-mean)**2
+        vrct = vrc + vrct
+    ecrtyp2 = vrct / N
+    ecrtyp = sqrt(ecrtyp2)
+
+    print("The average of the values ​​µ es of " + str(mean))
+    print("Varriance σ² is " + str(vrct))
+    print("The standard deviation σ is equal to " + str(ecrtyp))
+
 #** 
 # ? Choix
 # *
 
-wdyw = input("\nWhat do you want to calculate? Choose from the options below: \n\n1) evolution rate\n2) reciprocal rate\n3) evolution rate then reciprocal rate\n4) evolution rate and reciprocal rate\n\n")
+wdyw = input("\nWhat do you want to calculate? Choose from the options below: \n\n1) evolution rate\n2) reciprocal rate\n3) evolution rate then reciprocal rate\n4) evolution rate and reciprocal rate\n5) Standard deviation\n\n")
 try:
     if wdyw == "1":
         ter = rate() 
@@ -74,6 +104,8 @@ try:
         t1 = float(input("Choose the evolution rate (in percentage): "))
         tr = reciprocal_rate(t1)
         print("\nThe reciprocal rate is approximately" + str(tr) + ", in percentage " + str(tr*100) + "%")
+    elif wdyw == "5":
+        standard_deviation()
     else:
         print("Please check that you have entered the correct number assigned to the chosen calculation(s).")
 except:
