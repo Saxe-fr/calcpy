@@ -1,5 +1,5 @@
 #FR Code
-#** 
+#**
 # ! Function
 # ? f1
 # *
@@ -52,6 +52,12 @@ def taux_recipr(taux):
         return(round(tr,3))
     except:
         print("En l’absence de précisions supplémentaires sur l’axiomatique utilisée, selon le second théorème de Gödel, la proposition est indécidable.") #Blague de mathématicien
+
+#**
+# ? F5
+# *
+
+
 
 #** 
 # ? Choix
