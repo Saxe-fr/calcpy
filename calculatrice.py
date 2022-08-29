@@ -6,8 +6,8 @@ from math import *
 # *
 
 def taux_évolution_global():
-    nmbr1 = int(input("Combien voulez vous d'évolutions ? "))
-    try:
+    try:    
+        nmbr1 = int(input("Combien voulez vous d'évolutions ? "))
         cm = 1
         for i in range(2, nmbr1+2):
             taux = float(input("\nTaux n°" + str(i-1) + " ? "))
